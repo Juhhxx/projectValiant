@@ -11956,8 +11956,8 @@
             "autoFadeSpeed": 1,
             "id": "3565c861-2ba1-42d9-8be0-95ba50d50f0c",
             "symbol": "scene_0",
-            "x": 733.7142857142857,
-            "y": 915.6571393694196,
+            "x": 732.5142857142856,
+            "y": 925.6571393694195,
             "actors": [
                 {
                     "name": "",
@@ -13172,7 +13172,7 @@
                                     {
                                         "command": "EVENT_GROUP",
                                         "args": {
-                                            "__collapse": true
+                                            "__collapse": false
                                         },
                                         "children": {
                                             "true": [
@@ -13226,7 +13226,7 @@
                                                     "command": "EVENT_SWITCH_SCENE",
                                                     "args": {
                                                         "sceneId": "725f7e6e-1d33-4158-8385-723823c0062b",
-                                                        "x": 0,
+                                                        "x": 1,
                                                         "y": 8,
                                                         "direction": "right",
                                                         "fadeSpeed": "2",
@@ -13262,7 +13262,7 @@
                     "args": {
                         "variable": "0",
                         "__collapseElse": false,
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "children": {
                         "true": [
@@ -13282,36 +13282,73 @@
                         ],
                         "false": [
                             {
-                                "command": "EVENT_ACTOR_SET_DIRECTION",
+                                "command": "EVENT_IF_FALSE",
                                 "args": {
-                                    "actorId": "$self$",
-                                    "direction": {
-                                        "type": "direction",
-                                        "value": "left"
-                                    },
-                                    "__collapse": true
+                                    "variable": "5",
+                                    "__collapseElse": true,
+                                    "__collapse": false,
+                                    "__disableElse": true
                                 },
-                                "id": "9118125c-495f-4d05-b30e-2822e2e0c580"
-                            },
-                            {
-                                "command": "EVENT_ACTOR_SET_SPRITE",
-                                "args": {
-                                    "actorId": "d2e9d29a-5720-4068-a619-cb73d7c0ae88",
-                                    "spriteSheetId": "2d6a1b2d-18ca-431f-8849-be2364f13f8f",
-                                    "__collapse": true
-                                },
-                                "id": "a229bd86-7b3e-4db3-b0ba-5d58d13e1d29"
-                            },
-                            {
-                                "command": "EVENT_TEXT",
-                                "args": {
-                                    "text": [
-                                        "Here he should be\ngoob hahaha!"
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_IF_TRUE",
+                                            "args": {
+                                                "variable": "4",
+                                                "__collapseElse": true,
+                                                "__collapse": true
+                                            },
+                                            "children": {
+                                                "true": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_SET_DIRECTION",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "direction": {
+                                                                "type": "direction",
+                                                                "value": "left"
+                                                            },
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "9118125c-495f-4d05-b30e-2822e2e0c580"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_ACTOR_SET_SPRITE",
+                                                        "args": {
+                                                            "actorId": "d2e9d29a-5720-4068-a619-cb73d7c0ae88",
+                                                            "spriteSheetId": "2d6a1b2d-18ca-431f-8849-be2364f13f8f",
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "a229bd86-7b3e-4db3-b0ba-5d58d13e1d29"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_TEXT",
+                                                        "args": {
+                                                            "text": [
+                                                                "Here he should be\ngoob hahaha!"
+                                                            ],
+                                                            "avatarId": "",
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "e9c08d6a-6e6e-4f85-b6aa-68ac0aebd4bb"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_SET_TRUE",
+                                                        "args": {
+                                                            "variable": "5",
+                                                            "__collapse": false
+                                                        },
+                                                        "id": "8bff8b3d-9927-48f3-ba69-538ea02194de"
+                                                    }
+                                                ],
+                                                "false": []
+                                            },
+                                            "id": "5ab0164b-7d7c-4c5c-9181-8b51db2b7360"
+                                        }
                                     ],
-                                    "avatarId": "",
-                                    "__collapse": true
+                                    "false": []
                                 },
-                                "id": "e9c08d6a-6e6e-4f85-b6aa-68ac0aebd4bb"
+                                "id": "d897920e-4964-495f-ab8a-44f8359e254b"
                             }
                         ]
                     },
@@ -17248,7 +17285,8 @@
         },
         {
             "id": "5",
-            "name": "Quest2"
+            "name": "bodySet",
+            "symbol": "var_bodyset"
         },
         {
             "id": "6",
@@ -17321,8 +17359,8 @@
         "showConnections": "all",
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 750.6666870117188,
-        "worldScrollY": 1750.6666259765625,
+        "worldScrollX": 1631.3333740234375,
+        "worldScrollY": 2236,
         "zoom": 250,
         "customColorsEnabled": false,
         "sgbEnabled": false,
